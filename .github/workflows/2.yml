@@ -2,7 +2,18 @@ on: [workflow_dispatch]
 
 jobs:
   # This workflow contains a single job called/with ID "deploy-preview"
-  deploy-dev:
+  deploy-stg:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+
+    # The environment this job references
+    environment:
+      name: Staging
+      url: ${{ steps.step_name.outputs.url_output }} # optional
+    steps:
+      - name: Deploy
+        run: echo ok
+  deploy-prod:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
 
