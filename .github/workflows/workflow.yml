@@ -9,7 +9,7 @@ jobs:
     # The environment this job references
     environment:
       name: Dev
-      url: htttp:://example.com/${{ github.ref }} # optional
+      url: http://example.com/${{ github.ref }} # optional
     steps:
       - name: Deploy
         run: echo ok
