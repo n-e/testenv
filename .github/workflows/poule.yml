@@ -1,0 +1,15 @@
+on: [workflow_dispatch]
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Edit repo
+        run: |
+          date > 🐗.txt
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3.10.0
+        commit-message: Yo
+        title: Yo
+        branch: yoyo
+        delete-branch: true
